@@ -18,3 +18,8 @@ func GenUUID() (uuid UUID, uuidStr string, err error) {
 
   return [16]byte{}, fmt.Sprintf("%x-%x-%x-%x-%x", uuid[:4], uuid[4:6], uuid[6:8], uuid[8:10], uuid[10:16]), nil
 }
+
+func GenUUIDUnsafe() (uuid string) {
+  _, uuid, _ = GenUUID() 
+  return
+}
